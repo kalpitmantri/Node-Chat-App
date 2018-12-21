@@ -15,9 +15,20 @@ var io = socketIO(server);
 
 io.on('connection',(socket)=>{
 	console.log('New User Connected!!');
+
+	socket.emit('newMessage ',{
+		from:'Kalpit',
+		text:'Hey!! How are You??',
+		createAt:123
+	});  
+
+	socket.on('createMessage',(message)=>{
+		console.log('createMessage',message);
+	});
+
 	socket.on('disconnect',()=>{
 		console.log('Disconnected from client!!');
-	})
+	});
 });
 
 server.listen(port,()=>{
