@@ -18,7 +18,7 @@ class Users{
 	}
 
 	getUser(id){
-		var user = this.users.filter((user)=>user.id === id);
+		var user = this.users.filter((user)=>user.id === id)[0];
 		return user;
 	}
 

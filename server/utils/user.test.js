@@ -36,7 +36,7 @@ describe('Users',()=>{
 
 	it('should find user',()=>{
 		var user = users.getUser('1');
-		var expectedUser = [{id:'1',name:'A',room:'roomA'}];
+		var expectedUser = {id:'1',name:'A',room:'roomA'};
 		expect(user).toEqual(expectedUser);
 	});
 
